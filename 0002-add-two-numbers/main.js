@@ -22,15 +22,15 @@ var addTwoNumbers = function(l1, l2) {
   l1_int = BigInt(l1_vals.join(''));
   l2_int = BigInt(l2_vals.join(''));
 
-  console.log(l1_int);
-  console.log(l2_int);
+  // console.log(l1_int);
+  // console.log(l2_int);
 
   let sum = l1_int + l2_int;
 
-  console.log(sum);
+  // console.log(sum);
 
   let digits = sum.toString().split('').reverse();
-  console.log(digits);
+  // console.log(digits);
   let n = null;
 
   for (let i = 0; i < digits.length; i++) {

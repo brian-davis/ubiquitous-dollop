@@ -2,7 +2,6 @@ require "benchmark"
 
 # 19%
 def is_palindrome1(x)
-  # 19%
   x.to_s == x.to_s.reverse
 end
 
@@ -16,19 +15,7 @@ def is_palindrome2(x)
   return true
 end
 
-# https://leetcode.com/problems/palindrome-number/solutions/6581091/reverse-int-using-reminder-technique-runtime-4-ms-beats-48-78-memory-6-04-mb-beats-79-54/?source=submission-ac
-
-# func isPalindrome(x int) bool {
-#     reverseX := 0
-#     for num := x; num > 0; {
-#         rem := num % 10
-#         reverseX = reverseX * 10 + rem
-#         num = num / 10
-#     }
-#     if x != reverseX { return false }
-#     return true
-# }
-
+# from winning submission
 def is_palindrome3(x)
   reverse_x = 0
   num = x

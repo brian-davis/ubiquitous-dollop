@@ -1,18 +1,4 @@
-# @param {Integer[]} prices
-# @return {Integer}
-# def max_profit(prices)
-#   max_diff = 0
-#   0.upto(prices.length - 2) do |i|
-#     low = prices[i]
-#     (i + 1).upto(prices.length - 1) do |j|
-#       high = prices[j]
-#       diff = high - low
-#       max_diff = diff if diff > max_diff
-#     end
-#   end
-#   max_diff
-# end
-
+# slow
 def max_profit(prices)
   low_indexes = []
   0.upto(prices.length - 1) do |i|
@@ -48,6 +34,22 @@ def max_profit(prices)
     max_diff = diff if diff > max_diff
   end
   max_diff
+end
+
+def max_profit(prices)
+  max_spread = 0
+  low_i = 0
+  high_i = 1
+  while high_i < prices.length
+    spread = prices[high_i] - prices[low_i]
+    if spread < 0
+      low_i = high_i
+    else
+      max_spread = [max_spread, spread].max
+      high_i += 1
+    end
+  end
+  max_spread
 end
 
 ex1 =  max_profit([7,1,5,3,6,4])

@@ -1,5 +1,3 @@
-# https://leetcode.com/problems/path-sum/
-
 class TreeNode
   attr_accessor :val, :left, :right
   def initialize(val = 0, left = nil, right = nil)
@@ -9,7 +7,7 @@ class TreeNode
   end
 end
 
-# TODO: this is temporary
+# temporary
 def build_tree(arr)
   rows = []
   current_row = []
@@ -48,24 +46,6 @@ def build_tree(arr)
   return root
 end
 
-# # # v1
-# def path_sums(root, memo = 0)
-#   return [] if root.nil?
-#   memo += root.val
-
-#   if root&.left.nil? && root&.right.nil?
-#     return [memo]
-#   end
-
-#   [path_sums(root.left, memo), path_sums(root.right, memo)].compact.flatten
-# end
-
-# def has_path_sum(root, target_sum)
-#   r = path_sums(root)
-#   # p r
-#   return r.include?(target_sum)
-# end
-
 # v2
 def path_sums(root, memo = 0)
   paths = []
@@ -94,59 +74,48 @@ def has_path_sum(root, target_sum)
   return r.include?(target_sum)
 end
 
-e2 = build_tree([])
-p r =  has_path_sum(e2, 0)  == false ? "PASS" : "FAIL"
+# e2 = build_tree([])
+# p r =  has_path_sum(e2, 0)  == false ? "PASS" : "FAIL"
 
-e2 = build_tree([])
-p r =  has_path_sum(e2, -1) == false ? "PASS" : "FAIL"
+# e2 = build_tree([])
+# p r =  has_path_sum(e2, -1) == false ? "PASS" : "FAIL"
 
-en = build_tree([1,-2,-3,1,3,-2,nil,-1])
-#         1
-#     -2     -3
-#    1  3  -2   nil
-# -1
-#
-# 1 + -2 + 1 + -1 = -1
-# 1 + -2 + 3      = 2
-# 1 + -3 + -2     = -4
+# en = build_tree([1,-2,-3,1,3,-2,nil,-1])
+# #         1
+# #     -2     -3
+# #    1  3  -2   nil
+# # -1
+# #
+# # 1 + -2 + 1 + -1 = -1
+# # 1 + -2 + 3      = 2
+# # 1 + -3 + -2     = -4
 
-p r =  has_path_sum(en, -1) == true ? "PASS" : "FAIL"
-p r =  has_path_sum(en, 2)  == true ? "PASS" : "FAIL"
-p r =  has_path_sum(en, -4) == true ? "PASS" : "FAIL"
-p r =  has_path_sum(en, 0)  == false ? "PASS" : "FAIL"
+# p r =  has_path_sum(en, -1) == true ? "PASS" : "FAIL"
+# p r =  has_path_sum(en, 2)  == true ? "PASS" : "FAIL"
+# p r =  has_path_sum(en, -4) == true ? "PASS" : "FAIL"
+# p r =  has_path_sum(en, 0)  == false ? "PASS" : "FAIL"
 
-e1 = build_tree([
-    5,
-    4,8,
-    11,nil,13,4,
-    7,2,nil,nil,nil,1
-  ])
-#       5
-#      /     \
-#     4         8
-#    /    \         / \
-#   11    n      13  4
-#  /  \   /  \    /  \  \
-# 7    2  n  n    n  n    1
+# e1 = build_tree([
+#     5,
+#     4,8,
+#     11,nil,13,4,
+#     7,2,nil,nil,nil,1
+#   ])
+# #       5
+# #      /     \
+# #     4         8
+# #    /    \         / \
+# #   11    n      13  4
+# #  /  \   /  \    /  \  \
+# # 7    2  n  n    n  n    1
 
-# >> 5+4+11+7 # => 27 # .max
-# >> 5+4+11+2 # => 22
-# >> 5+8+13 # => 26
-# >> 5+8+4+1 # => 18 # .min
+# # >> 5+4+11+7 # => 27 # .max
+# # >> 5+4+11+2 # => 22
+# # >> 5+8+13 # => 26
+# # >> 5+8+4+1 # => 18 # .min
 
-p r = has_path_sum(e1, 27) == true ? "PASS" : "FAIL" # true
-p r = has_path_sum(e1, 22) == true ? "PASS" : "FAIL" # true
-p r = has_path_sum(e1, 26) == true ? "PASS" : "FAIL" # true
-p r = has_path_sum(e1, 18) == true ? "PASS" : "FAIL" # true
-p r = has_path_sum(e1, 9)  == false ? "PASS" : "FAIL" # false
-
-
-# require "benchmark"
-# Benchmark.bm do |x|
-#   x.report("v1") {
-#     has_path_sum(e1, 22)
-#   }
-#   x.report("v2") {
-#     has_path_sum2(e1, 22)
-#   }
-# end
+# p r = has_path_sum(e1, 27) == true ? "PASS" : "FAIL" # true
+# p r = has_path_sum(e1, 22) == true ? "PASS" : "FAIL" # true
+# p r = has_path_sum(e1, 26) == true ? "PASS" : "FAIL" # true
+# p r = has_path_sum(e1, 18) == true ? "PASS" : "FAIL" # true
+# p r = has_path_sum(e1, 9)  == false ? "PASS" : "FAIL" # false

@@ -23,3 +23,5 @@ func isPalindrome(x int) bool {
 func main() {
 	fmt.Println(isPalindrome(121));
 }
+
+// TODO v2

@@ -1,14 +1,3 @@
-# 58. Length of Last Word
-# Easy
-# Topics
-# Companies
-# Given a string s consisting of words and spaces, return the length of the last word in the string.
-
-# A word is a maximal substring consisting of non-space characters only.
-
-
-# @param {String} s
-# @return {Integer}
 def length_of_last_word(s)
   s.split(/\W/).last.length
 end
@@ -34,8 +23,3 @@ p length_of_last_word(e2)
 e3 = "luffy is still joyboy"
 p length_of_last_word(e3)
 
-
-# Constraints:
-# 1 <= s.length <= 104
-# s consists of only English letters and spaces ' '.
-# There will be at least one word in s.

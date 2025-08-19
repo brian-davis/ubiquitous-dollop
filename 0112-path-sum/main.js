@@ -36,46 +36,46 @@ var hasPathSum = function(root, targetSum) {
   return i !== -1
 };
 
-// [
+// // [
+// //   5,
+// //   4,        8,
+// //   11,null, 13,4,
+// //   7,2,null,null,null,1
+// // ]
+// let e1 = new TreeNode(
 //   5,
-//   4,        8,
-//   11,null, 13,4,
-//   7,2,null,null,null,1
-// ]
-let e1 = new TreeNode(
-  5,
-  new TreeNode(
-    4,
-    new TreeNode(
-      11,
-      new TreeNode(7),
-      new TreeNode(2),
-    ),
-  ),
-  new TreeNode(
-    8,
-    new TreeNode(13),
-    new TreeNode(
-      4,
-      null,
-      new TreeNode(1)
-    ),
-  )
-);
+//   new TreeNode(
+//     4,
+//     new TreeNode(
+//       11,
+//       new TreeNode(7),
+//       new TreeNode(2),
+//     ),
+//   ),
+//   new TreeNode(
+//     8,
+//     new TreeNode(13),
+//     new TreeNode(
+//       4,
+//       null,
+//       new TreeNode(1)
+//     ),
+//   )
+// );
 
-console.log(
-  hasPathSum(e1, 27)
-);
-console.log(
-  hasPathSum(e1, 18)
-);
-console.log(
-  hasPathSum(e1, 22)
-);
-console.log(
-  hasPathSum(e1, 26)
-);
+// console.log(
+//   hasPathSum(e1, 27)
+// );
+// console.log(
+//   hasPathSum(e1, 18)
+// );
+// console.log(
+//   hasPathSum(e1, 22)
+// );
+// console.log(
+//   hasPathSum(e1, 26)
+// );
 
-console.log(
-  hasPathSum(e1, 1000)
-); // false
+// console.log(
+//   hasPathSum(e1, 1000)
+// ); // false

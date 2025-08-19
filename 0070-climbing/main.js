@@ -1,14 +1,3 @@
-// def climb_stairs_fast_fib2(n)
-//   fibs = [1, 1]
-
-//   0.upto(n) do |i|
-//     fibs[i] ||= fibs[i - 1] + fibs[i - 2]
-//   end
-
-//   fibs[n]
-// end
-
-
 var climbStairs = function(n) {
   let fibs = [1, 1];
   for (i = 0; i <= n; i++) {

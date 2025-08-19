@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function(s) {
     if (charCount[c]) {
 
       // var ci = currentChars.indexOf[c];
-      // console.log("ci: ", ci); // undefined WTF
+      // console.log("ci: ", ci); // undefined DEBUG
       var ci = 0
       for (var k = 0; k < currentChars.length; k++) {
         var kc = currentChars[k];
@@ -39,25 +39,25 @@ var lengthOfLongestSubstring = function(s) {
   }
 };
 
-let e489 = "bbtablud";
-let r489 = lengthOfLongestSubstring(e489);
-console.log(r489);
-console.log(r489 === 6);
+// let e489 = "bbtablud";
+// let r489 = lengthOfLongestSubstring(e489);
+// console.log(r489);
+// console.log(r489 === 6);
 
-let e357 = "abcb"
-let r357 = lengthOfLongestSubstring(e357);
-console.log( r357);
-console.log( r357 === 3);
+// let e357 = "abcb"
+// let r357 = lengthOfLongestSubstring(e357);
+// console.log( r357);
+// console.log( r357 === 3);
 
-e408 = "dvdf";
-r408 = lengthOfLongestSubstring(e408);
-console.log( r408);
-console.log( r408 === 3);
+// e408 = "dvdf";
+// r408 = lengthOfLongestSubstring(e408);
+// console.log( r408);
+// console.log( r408 === 3);
 
-e1b = "zbexrampetvhqnddjeqvuygpnkazqfrpjvoaxdpcwmjobmskskfojnewxgxnnofwltwjwnnvbwjckdmeouuzhyvhg";
-r1b = lengthOfLongestSubstring(e1b);
-console.log( r1b);
-console.log( r1b === 13);
+// e1b = "zbexrampetvhqnddjeqvuygpnkazqfrpjvoaxdpcwmjobmskskfojnewxgxnnofwltwjwnnvbwjckdmeouuzhyvhg";
+// r1b = lengthOfLongestSubstring(e1b);
+// console.log( r1b);
+// console.log( r1b === 13);
 
 // e0 = "abcde";
 // r0 = lengthOfLongestSubstring(e0);

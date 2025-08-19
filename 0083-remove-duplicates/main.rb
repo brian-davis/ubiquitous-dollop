@@ -8,6 +8,7 @@ class ListNode
     @next = _next
   end
 
+  # convenience
   def inspector
     r = []
     current = self.dup
@@ -20,8 +21,7 @@ class ListNode
   end
 end
 
-# @param {ListNode} head
-# @return {ListNode}
+# slow
 def delete_duplicates(head)
   return unless head
   result = ListNode.new(head.val)
@@ -42,7 +42,6 @@ def delete_duplicates(head)
   result
 end
 
-
 # Input: head = [1,1,2]
 # Output: [1,2]
 
@@ -60,7 +59,6 @@ end
 # p r2.inspector == [1,2,3]
 
 # beats 8%
-
 def delete_duplicates2(head)
   return unless head
   return head unless head.next
@@ -77,19 +75,19 @@ def delete_duplicates2(head)
   head
 end
 
-e1 = ListNode.new(1, ListNode.new(1, ListNode.new(2)))
-p e1.inspector
-r1 = delete_duplicates2(e1)
-p r1.inspector
-p r1.inspector == [1,2]
+# e1 = ListNode.new(1, ListNode.new(1, ListNode.new(2)))
+# p e1.inspector
+# r1 = delete_duplicates2(e1)
+# p r1.inspector
+# p r1.inspector == [1,2]
 
-# e2 = ListNode.new(1, ListNode.new(1, ListNode.new(2, ListNode.new(2, ListNode.new(3)))))
+# # e2 = ListNode.new(1, ListNode.new(1, ListNode.new(2, ListNode.new(2, ListNode.new(3)))))
 # r2 = delete_duplicates2(e2)
 # p e2.inspector
 # p r2.inspector
 # p r2.inspector == [1,2,3]
 
-e3 = ListNode.new(1, ListNode.new(1, ListNode.new(2, ListNode.new(3, ListNode.new(3)))))
+# e3 = ListNode.new(1, ListNode.new(1, ListNode.new(2, ListNode.new(3, ListNode.new(3)))))
 # p e3.inspector
 # r3 = delete_duplicates2(e3)
 # p r3.inspector

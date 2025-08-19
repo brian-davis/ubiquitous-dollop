@@ -6,6 +6,7 @@ function isPalindrome(x) {
   return r
 }
 
+// TODO: v2
 
 // // remainder method
 // function isPalindrome(x) {

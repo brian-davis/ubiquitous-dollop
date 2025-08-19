@@ -3,7 +3,6 @@ package main
 import ("fmt")
 import ("math")
 
-
 type TreeNode struct {
   Val int // 0
   Left *TreeNode // nil

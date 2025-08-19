@@ -45,10 +45,6 @@ def build_tree(arr)
   return root
 end
 
-# Given a binary tree, find its minimum depth.
-# The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
-# Note: A leaf is a node with no children.
-
 def min_depth(root)
   return 0 if root.nil?
   if root.left.nil?
@@ -60,26 +56,26 @@ def min_depth(root)
   end
 end
 
-e1 = build_tree([3,9,20,nil,nil,15,7])
-#    3
-#   / \
-#  9   20
-#      / \
-#     15  7
-r = min_depth(e1)
-p r
-p r == 2
+# e1 = build_tree([3,9,20,nil,nil,15,7])
+# #    3
+# #   / \
+# #  9   20
+# #      / \
+# #     15  7
+# r = min_depth(e1)
+# p r
+# p r == 2
 
-e2 = build_tree([2,nil,3,nil,4,nil,5,nil,6])
-#   2
-#    \
-#     3
-#      \
-#       4
-#        \
-#         5
-#          \
-#           6
-r =  min_depth(e2)
-p r
-p r == 5
+# e2 = build_tree([2,nil,3,nil,4,nil,5,nil,6])
+# #   2
+# #    \
+# #     3
+# #      \
+# #       4
+# #        \
+# #         5
+# #          \
+# #           6
+# r =  min_depth(e2)
+# p r
+# p r == 5
