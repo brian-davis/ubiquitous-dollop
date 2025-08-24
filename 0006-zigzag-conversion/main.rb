@@ -42,22 +42,20 @@ def convert1(s, num_rows)
   return cols.transpose.map(&:join).join
 end
 
-# faster, beats 57%
+# faster, beats 77%
 def convert2(s, num_rows)
   return s if num_rows <= 1
-  grid_length = s.length + (num_rows - (s.length % num_rows))
-  str = s.ljust(grid_length)
   rows = Array.new(num_rows) { "" }
   row_index = 0
   increment = 1 # down
-  str.each_char do |c|
+  s.each_char do |c|
     rows[row_index] << c
     row_index += increment
     if row_index == (num_rows - 1) || row_index == 0
       increment *= -1 # toggle
     end
   end
-  rows.map(&:strip).join
+  rows.join
 end
 
 TESTS = [
