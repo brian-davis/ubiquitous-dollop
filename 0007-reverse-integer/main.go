@@ -3,13 +3,22 @@ package main
 import ("fmt")
 import ("math")
 // From python algorithm editorial: https://leetcode.com/problems/reverse-integer/editorial/?page=3
+
+func intAbs (x int) int {
+	if x < 0 {
+		return -1 * x
+	} else {
+		return x
+	}
+}
+
 func reverse(x int) int {
 	sign := 1
 	if x < 0 {
 		sign = -1
 	}
 	rev := 0
-	x = int(math.Abs(float64(x)))
+	x = intAbs(x)
 	for x != 0 {
 		mod := x % 10
 		x = (x - mod) / 10
