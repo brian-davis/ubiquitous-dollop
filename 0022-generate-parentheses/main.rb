@@ -25,21 +25,15 @@ end
 
 # beats 5%
 def generate_parenthesis2(n)
-  # binary string of length 2n starting with 0 after rjust, ending in 1
   minval = 2 ** n - 1 # inclusive
   # maxval = 4 ** n / 2 - 1 # max by place value
   maxval = (4 ** n) / 3 # max by observation
-
   r = (minval..maxval).step(2) # all end in 1, odd
     .map { |e| e.to_s(2) }
     .select { |s| s.count("1") == n }
     .map { |e| e.rjust(n * 2, "0") } # all start with 0; faster than sprintf
     .select { |s| valid_parens(s, true) }
     .map { |s| s.gsub("0", "(").gsub("1", ")") }
-
-    # ints = r.map { |s| s.gsub("(", "0").gsub(")", "1") }.map { |s| s.to_i(2) }
-    # puts ints.inspect
-    # binding.irb
   r
 end
 
@@ -47,7 +41,6 @@ end
 def generate_parenthesis3(n)
   minval = 2 ** n - 1 # inclusive
   maxval = (4 ** n) / 3 # max by observation
-
   formatter =  "%0#{2 * n}b"
   r = (minval..maxval).step(2) # all end in 1, odd
     .map { |e| formatter % e }

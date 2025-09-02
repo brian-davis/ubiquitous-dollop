@@ -31,7 +31,7 @@ var generateParenthesis = function(n) {
   }
   let r = range
     .map((e) => e.toString(2))
-    .filter((e) => (e.match(/1/g)||[]).length)
+    .filter((e) => (e.match(/1/g)||[]).length == n)
     .map((e) => e.padStart(n * 2, "0"))
     .filter((e) => validParens(e, true))
     .map((e) => e.replaceAll("0", "(").replaceAll("1", ")"));
